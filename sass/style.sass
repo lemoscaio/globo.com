@@ -1,0 +1,499 @@
+//Cores
+    
+$cor-titulo-principal:#C4160C
+
+$cor-titulo-secundario:#303134
+
+$cor-noticia-secundaria-tema: #C4170C
+
+$cor-noticia-secundaria-titulo: #2F3134
+
+
+$cor-borda: #F5F6F7
+
+$cor-g1: #C3170C
+
+$cor-oglobo: #1E4B9B
+
+$cor-valor: #006766
+
+$cor-ge: #07AA47
+$cor-ge-titulo: #16AE54
+
+$cor-cartola: #E3662B
+
+$cor-globoplay: #FB0735
+
+$cor-dropz: #FF75BB
+
+$cor-gshow: #EC7D00
+$cor-gshow-titulo:#EC8006
+
+$cor-quem: #323333
+
+$cor-receitas: #A81D83
+
+$cor-tech: #666666
+
+$cor-videos: #0769DE
+
+//Tamanho de fontes
+
+$fonte-14px: 0.875rem
+$fonte-20px: 1.25rem
+$fonte-18px: 1.125rem
+$fonte-32px: 2rem
+$fonte-52px: 3.25rem
+
+
+//Margens e Paddings
+
+$espacamento-muito-pequeno: 0.5rem
+$espacamento-pequeno: 1rem
+$espacamento-medio: 1.5rem
+$espacamento-grande: 2.5rem
+
+//Altura de linhas
+
+$line-height-padrao: 1.25em
+
+//Fontes
+
+$fonte-padrao:'Encode Sans', sans-serif
+    
+//Mixins a seguir
+
+@mixin for-phone-only()
+    @media screen and (max-width: 767.98px)
+        @content
+    
+
+
+
+.corpo
+    margin: 0 auto  
+    font-family: $fonte-padrao
+
+    @include for-phone-only()
+        
+
+.main
+    width: 1250px
+    margin: 0 auto
+    box-sizing: border-box
+
+    @include for-phone-only()
+        width: 100%
+        padding: $espacamento-pequeno
+        
+
+.divisao-principal
+    display: flex
+    justify-content: space-between
+    
+    @include for-phone-only()
+        flex-direction: column
+        align-items: flex-start
+
+.container
+    
+    border-right: 1px solid $cor-borda
+    box-sizing: border-box
+    
+    @include for-phone-only()
+        border: none
+
+    &:first-child 
+        padding-right:$espacamento-medio
+
+        @include for-phone-only()
+            padding: 0
+
+    &:last-child
+        
+        padding-left: $espacamento-medio
+        border-right: none
+
+        @include for-phone-only()
+            padding: 0
+        
+
+.link-noticia
+    text-decoration: none
+
+    &:visited
+        color: inherit
+
+// CABEÇALHO
+
+.cabecalho
+    display: flex
+    flex-direction: column
+    align-items: center
+    height: 80px
+    margin-bottom: $espacamento-grande
+    
+
+    &__logo-link
+        margin: $espacamento-pequeno
+
+    &__logo-imagem
+        width: 171px
+        
+    &__bordas-nav
+        width: 100%
+        display: flex
+        justify-content: center
+        align-items: center
+        border-top: 1px solid $cor-borda
+        border-bottom: 1px solid $cor-borda
+
+    &__menu
+        width: 1250px
+        display: flex
+        justify-content: space-between
+        // border-top: 1px solid $cor-borda
+        // border-bottom: 1px solid $cor-borda
+        padding: 0.5rem
+
+        @include for-phone-only()
+            width: 100%
+            padding: $espacamento-pequeno $espacamento-grande
+        
+
+    &__menu-link
+        text-transform: lowercase
+        text-decoration: none
+        font-weight: bold
+
+        &__g1
+            color: $cor-g1
+
+        &__oglobo
+            color: $cor-oglobo
+            @include for-phone-only()
+                display: none
+
+        &__valor
+            color: $cor-valor
+            @include for-phone-only()
+                display: none
+
+        &__ge
+            color: $cor-ge
+
+        &__cartola
+            color: $cor-cartola
+            @include for-phone-only()
+                display: none
+
+        &__globoplay
+            color: $cor-globoplay
+            @include for-phone-only()
+                display: none
+
+        &__dropz
+            color: $cor-dropz
+            @include for-phone-only()
+                display: none
+
+        &__gshow
+            color: $cor-gshow
+            
+
+        &__quem
+            color: $cor-quem
+            @include for-phone-only()
+                display: none
+
+        &__receitas
+            color: $cor-receitas
+            @include for-phone-only()
+                display: none
+
+        &__tech
+            display: none
+            color: $cor-tech
+
+            @include for-phone-only()
+                display: inline
+
+        &__videos
+            display: none
+            color: $cor-videos
+
+            @include for-phone-only()
+                display: inline       
+
+// NOTICIAS PRINCIPAIS
+
+
+.conteudo-destaque
+    // width: 50%
+    
+
+.noticias-destaque
+
+    &__card
+
+        
+        padding: $espacamento-pequeno 0
+        border-bottom: 1px solid $cor-borda
+
+        &__principal
+            font-size: $fonte-52px
+            color: $cor-titulo-principal
+            font-weight: bold
+            margin-bottom: $espacamento-medio
+                
+            @include for-phone-only()
+                font-size: $fonte-32px
+
+        &__secundaria
+
+            font-size: $fonte-18px
+            color: $cor-titulo-secundario
+            // padding: 0.5rem 0
+            margin-bottom:$espacamento-muito-pequeno
+
+            @include for-phone-only()
+                color: $cor-g1
+                font-weight: bold
+
+
+
+// NOTICIAS SECUNDÁRIAS
+
+.divisao-mobile
+    @include for-phone-only()
+    
+        display: flex
+
+.noticias-secundarias
+
+    display: flex
+    border-bottom: 1px solid $cor-borda
+    
+    justify-content: space-between
+
+    
+    @include for-phone-only()
+        flex-direction: column
+        align-items: flex-start
+        
+
+    &__card
+
+        width: 193px
+        box-sizing: content-box
+        
+        
+        padding: $espacamento-medio 0 $espacamento-grande 0
+        
+        @include for-phone-only()
+            width: 100%
+            border-bottom: 1px solid $cor-borda
+            padding: $espacamento-pequeno 0 $espacamento-pequeno 0
+
+        &__imagem
+
+            width: 100%
+            border-radius: 12px
+            margin-bottom: $espacamento-muito-pequeno
+
+            transition: 0.7s
+
+            &:hover
+                filter: brightness(80%)
+
+            @include for-phone-only()
+                width: 120px
+
+
+        &__tema
+            color: $cor-noticia-secundaria-tema
+            font-weight: bold
+            font-size: $fonte-14px
+            
+            margin-bottom:$espacamento-muito-pequeno
+
+            @include for-phone-only()
+                display: none
+
+        &__titulo
+            color: $cor-noticia-secundaria-titulo
+            font-weight: bold
+            font-size: $fonte-20px
+            line-height: $line-height-padrao
+            margin-bottom:$espacamento-muito-pequeno
+
+            @include for-phone-only()
+                margin-left: $espacamento-muito-pequeno
+                color: $cor-g1
+                
+
+        &__resumo
+            color: $cor-noticia-secundaria-titulo
+            font-size: $fonte-14px
+            margin-bottom:$espacamento-muito-pequeno
+            line-height: $line-height-padrao
+
+            @include for-phone-only()
+                margin-bottom: 0
+                color: $cor-g1
+
+
+// NOTÍCIAIS TERCIÁRIAS
+
+.noticias-terciarias
+
+    display: flex    
+    justify-content: space-between
+
+    @include for-phone-only()
+        flex-direction: column
+        align-items: flex-start
+
+    &__card
+
+        // margin: 0.5rem
+        width: 193px
+        padding: $espacamento-medio 0 $espacamento-medio 0
+
+        @include for-phone-only()
+            width: 100%
+            border-bottom: 1px solid $cor-borda
+
+        &__tema
+            color: $cor-noticia-secundaria-tema
+            font-weight: bold
+            font-size: $fonte-14px
+            
+            margin-bottom:$espacamento-muito-pequeno
+            // padding: 0.5rem 0
+
+        &__titulo
+            color: $cor-noticia-secundaria-titulo
+            font-weight: bold
+            font-size: $fonte-20px
+            line-height: $line-height-padrao
+            margin-bottom:$espacamento-muito-pequeno
+            
+            @include for-phone-only()
+                color: $cor-g1
+
+        &__resumo
+            color: $cor-noticia-secundaria-titulo
+            font-size: $fonte-14px
+            line-height: $line-height-padrao
+            margin-bottom:$espacamento-muito-pequeno
+
+            @include for-phone-only()
+                margin-bottom: 0
+                color: $cor-g1
+
+// NOTÍCIAIS LADO DIREITO            
+
+.conteudo-lateral
+    // width: 50%
+    display: flex
+    
+    &__primeiro
+        padding: 0 $espacamento-medio 0 0
+
+        @include for-phone-only()
+            padding: 0
+
+    &__segundo
+        border-left: 1px solid $cor-borda
+
+        @include for-phone-only()
+            border: none
+    
+    @include for-phone-only()
+        flex-direction: column
+        align-items: flex-start
+
+.noticias-lateral
+    
+    &__card
+    
+        width: 240px
+        
+        margin-bottom: $espacamento-grande
+        
+        @include for-phone-only()
+            width: 100%
+            border-bottom: 1px solid $cor-borda
+            padding: $espacamento-pequeno 0 $espacamento-pequeno 0
+            margin-bottom: 0
+
+        .noticia-ge
+            color: $cor-ge-titulo
+
+            &__mobile
+
+                @include for-phone-only()
+                    color: $cor-ge
+
+        .noticia-gshow
+            color: $cor-gshow-titulo
+
+            &__mobile
+
+                @include for-phone-only()
+                    color: $cor-gshow
+
+        &__imagem
+            width: 100%
+            border-radius: 12px
+            margin-bottom: $espacamento-muito-pequeno
+
+            transition: 0.7s
+
+            &:hover
+                filter: brightness(80%)
+
+            @include for-phone-only()
+                width: 120px
+                height: 67px
+                
+
+                margin-right: $espacamento-muito-pequeno
+                margin-bottom: $espacamento-pequeno
+        &__tema
+            color: $cor-noticia-secundaria-tema
+            font-weight: bold
+            font-size: $fonte-14px
+            margin-bottom:$espacamento-muito-pequeno
+
+            @include for-phone-only()
+                display: none
+                
+
+        &__titulo
+            color: $cor-noticia-secundaria-titulo
+            font-weight: bold
+            font-size: $fonte-20px
+            line-height: $line-height-padrao
+            margin-bottom:$espacamento-muito-pequeno
+
+            
+
+            
+
+        &__relacionado
+            color: $cor-noticia-secundaria-titulo
+            font-size: $fonte-14px
+            line-height: $line-height-padrao
+            margin-bottom:$espacamento-muito-pequeno
+
+            @include for-phone-only()
+                margin: 0
+
+
+            
+
+
+
+
